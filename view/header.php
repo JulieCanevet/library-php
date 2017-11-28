@@ -19,4 +19,16 @@
     <body>
         <header>
             <h3>Bibliothèque</h3>
+            <form method="POST" action="index.php">
+        <form method="post" action="index.php">
+          <div class="form-group">
+            <select name="ordre">
+              <option value="books">livres</option>
+              <option value="users">Utilisateur</option>
+            </select>
+            <input type="submit" value="tri">
+          </div>
+        </form>
+        
+            </form>
         </header>

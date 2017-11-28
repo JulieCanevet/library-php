@@ -1,9 +1,9 @@
 <?php 
 require 'model/connexion.php';
 require 'model/book_manager.php';
-
+require 'model/user_manager.php';
 $manager = new BookManager($db);
-
+$userManager = new UserManager($db);
 require 'view/header.php';
 
 require 'view/new_book_form.php';
@@ -26,3 +26,19 @@ echo 'bonjour';
  
   $manager -> add($book);
 }
+
+// afficher les clients ou les livres
+if(isset($_POST['ordre'])){
+	if($_POST['ordre'] == 'users'){
+	$users = $userManager -> getUsers();
+	require 'view/home_users_display.php';
+    }
+	elseif($_POST['ordre'] == 'books'){
+	$books = $manager -> getBooks();
+	require 'view/home_books_display.php';    
+	}
+}
+else{
+	$books = $manager -> getBooks();
+	require 'view/home_books_display.php';
+    }
