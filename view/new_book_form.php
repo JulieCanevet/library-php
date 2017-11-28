@@ -12,6 +12,9 @@
                 </div>
                 <div class="form-group">
                     <input type="text" name="summary" class="form-control" placeholder="Résumé du livre">
+                </div>  
+                <div class="form-group">
+                    <input type="text" name="release_date" class="form-control" placeholder="Date de sortie du livre">
                 </div>                
                 <div class="form-group">
                     <select name="category">
@@ -22,7 +25,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-
+                    
                 </div>                
 
                 <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Ajouter" name="add">
