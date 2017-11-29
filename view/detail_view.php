@@ -1,9 +1,6 @@
 <body>
-        <button type="submit" name="plus" class="plus"><i class="fa fa-plus" aria-hidden="true"></i></button>
-        <a href="index.php">Retour</a>
         
         <div class="card">
-          <h2><?php echo $detail['title'] ?></h2>
           <h4 class="body">Titre : <?php echo $detail['title'] ?></h4>
           <h4 class="body">Auteur : <?php echo $detail['author'] ?></h4>
           <p class="body">Résumé : <?php echo $detail['summary'] ?></p>
@@ -15,3 +12,12 @@
                 ?> <h6 class="indisponnible">Indisponible</h6>
               <?php } ?>
         </div>
+        <?php 
+        if($_GET['available'] != 1 ){
+        	//foreach ($userDetail as $key => $value) {
+        		?>
+        		<h3>Emprunté par <?php echo $userDetail['name']; ?>, habitant de <?php echo $userDetail['city']; ?></h3>
+        		<?php
+        	//}
+        }
+        ?>        <a href="index.php">Retour</a>

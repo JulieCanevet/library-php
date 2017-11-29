@@ -5,6 +5,7 @@ require 'model/user_manager.php';
 $manager = new BookManager($db);
 $userManager = new UserManager($db);
 require 'view/header.php';
+require 'view/header_home.php';
 require 'view/new_book_form.php';
 
 // je m' occupe de l'ajout
@@ -29,7 +30,6 @@ if(isset($_POST['add']) && isset($_POST['title']) && isset($_POST['author']) && 
 // edit book availability
 if (isset($_POST['edit'])){ // if "edit" has been clicked
   $users = $userManager -> getUsers(); // displaying users list
-  require 'view/id_customer.php';
 }
 
 if(isset($_POST['edition'])){ // change value 
@@ -79,7 +79,7 @@ else{ // par défaut, affiche tous les livres
 }
 
 
-
+require 'view/footer.php';
 
 
 

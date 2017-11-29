@@ -9,4 +9,10 @@ if(isset($_GET['id_book'])){ // display details of one book
 	$detail = $details -> getDetails(intval($_GET['id_book']));
 }
 
+if(isset($_GET['available'])){
+	$detailUser = new DetailsManager($db);
+		$userDetail = $detailUser -> getUserDetail($_GET['available']);
+	}
+
+
 require 'view/detail_view.php';

@@ -94,11 +94,14 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-.disponnible {
+.disponible {
     color: green;
 }
-.indisponnible {
+.indisponible {
     color: red;
+}
+.newBook {
+    display: none;
 }
 /* ==========================================================================
    Helper classes

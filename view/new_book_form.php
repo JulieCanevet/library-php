@@ -1,5 +1,5 @@
 <!-- Form to add new account -->
-<section class="add">
+<section class="newBook">
     <div class="container col-12 col-sm-6 col-md-6">
         <div class="form-wrap">
         	<h1>Ajouter un livre</h1>

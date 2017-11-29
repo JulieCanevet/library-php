@@ -23,4 +23,14 @@ class DetailsManager {
 		$details = $req -> fetch();
 		return $details;
 	}
+
+	public function getUserDetail($customer){
+		$req = $this -> _db -> prepare('SELECT * FROM customers
+			WHERE id_customer = :id_customer');
+		$req -> execute(array(
+			'id_customer' => $customer
+		));
+		$detailsUser = $req -> fetch();
+		return $detailsUser;
+	}
 }
