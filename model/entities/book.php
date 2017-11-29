@@ -6,7 +6,6 @@ class Book {
 	protected $_category;
 	protected $_release_date;
 	protected $_availability;
-	protected $_id_custommer;
 
 	public function __construct(array $donnees){ // constructeur
 		$this -> hydrate($donnees);
@@ -28,8 +27,7 @@ class Book {
   	public function getRelease_date() { return $this-> _release_date;}
   	public function getCategory() { return $this-> _category;}
   	public function getSummary() { return $this-> _summary;}
-  	// public function getAvailability() { return $this-> _availability;}
-  	// public function getId_customer() { return $this-> _id_custommer;}
+  	public function getAvailability(){ return $this-> _availability;}
 
 	// LISTE DES SETTERS
 	public function setTitle($title){
@@ -48,11 +46,7 @@ class Book {
 			$this -> _summary = $summary;
 	}
 
-	// public function setAvailability($availability){
-	// 		$this -> _availability = $availability;
-	// }
-
-	// public function setId_customer(){
- // 			$this -> _id_customer = 0;
- // 		}
+	public function setAvailability($availability){
+	 		$this -> _availability = $availability;
+	}
 }

@@ -20,28 +20,10 @@ class BookManager {
 	    'release_date' => $book -> getRelease_date(),
 	    'category' => $book -> getCategory(),
 	    'summary' => $book -> getSummary(),
-	    // 'availability' => $book -> getAvailability()
 	    ));
 	}
 
-
-	// public function getTypeBook($ordre){ //sort the book listing in home page
-	// 	$sql = 'SELECT * FROM books WHERE category = ';
-	// 	if ($ordre == 'novel') {
-	// 		$sql .= 'novel';
-	// 	} elseif ($ordre == 'poetry') {
-	// 		$sql .= 'poetry';
-	// 	} elseif ($ordre == 'adventure') {
-	// 		$sql .= 'adventure';
-	// 	} elseif ($ordre == 'scienceFiction') {
-	// 		$sql .= 'scienceFiction';
-	// 	}
-	// 	$req = $this->_db->query($sql);
-	// 	$books = $req -> fetchAll();
-	// 	return $books;
-	// }
-
-		public function getTypeBook($ordre){ // Select only one account
+		public function getTypeBook($ordre){ // Select only one category
 		$req = $this -> _db -> prepare('SELECT * FROM books
 			WHERE category = :category');
 		$req -> execute(array(
@@ -57,8 +39,12 @@ class BookManager {
 		$books = $req -> fetchAll();
 		return $books;
 	}
-}
 
-// :availability, :id_customer
-//    'summary' => $book -> getSummary(),
-//    'availability' => $book -> getAvailability()
+	public function editAvailability($idBook, $idUser){
+		$req = $this -> _db -> prepare('UPDATE books SET availability = :availability WHERE id_book = :id_book');
+		$req -> execute(array(
+			'availability' => $idUser,
+			'id_book' => $idBook
+		));
+	}
+}

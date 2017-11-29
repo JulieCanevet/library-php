@@ -14,7 +14,7 @@
                     <input type="text" name="summary" class="form-control" placeholder="Résumé du livre">
                 </div>  
                 <div class="form-group">
-                    <input type="text" name="release_date" class="form-control" placeholder="Date de sortie du livre">
+                    <input type="text" name="release_date" class="form-control" placeholder="Année de sortie du livre (ex: 1987)">
                 </div>                
                 <div class="form-group">
                     <select name="category">
