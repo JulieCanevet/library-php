@@ -25,6 +25,32 @@ class BookManager {
 	}
 
 
+	// public function getTypeBook($ordre){ //sort the book listing in home page
+	// 	$sql = 'SELECT * FROM books WHERE category = ';
+	// 	if ($ordre == 'novel') {
+	// 		$sql .= 'novel';
+	// 	} elseif ($ordre == 'poetry') {
+	// 		$sql .= 'poetry';
+	// 	} elseif ($ordre == 'adventure') {
+	// 		$sql .= 'adventure';
+	// 	} elseif ($ordre == 'scienceFiction') {
+	// 		$sql .= 'scienceFiction';
+	// 	}
+	// 	$req = $this->_db->query($sql);
+	// 	$books = $req -> fetchAll();
+	// 	return $books;
+	// }
+
+		public function getTypeBook($ordre){ // Select only one account
+		$req = $this -> _db -> prepare('SELECT * FROM books
+			WHERE category = :category');
+		$req -> execute(array(
+			'category' => $ordre
+		));
+		$bookType = $req -> fetchAll();
+		return $bookType;
+	}
+
 	public function getBooks(){ //sort the listing in home page
 		$sql = 'SELECT * FROM books';
 		$req = $this->_db->query($sql);

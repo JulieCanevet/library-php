@@ -1,14 +1,12 @@
-        <section id="home">
-          <?php
-          if(isset($books)){
-              foreach ($books as $key => $value) {
+<?php
+              foreach ($bookType as $key => $value) {
           ?>
           <div class="card">
               <h3><?php echo $value['title'] ?></h3>
     
               <h6 class="body">Auteur : <?php echo $value['author'] ?></h6>
               <h6 class="body">Résumé : <?php echo $value['summary'] ?></h6>
-              <h6 class="body">Catégories : <?php echo $value['category'] ?></h6>
+              <h6 class="body">Catégorie : <?php echo $value['category'] ?></h6>
               <div class="footer">
                   <a href="detail.php?id=<?php echo $value['id_book']?>" class="card-link">Voir</a>
       
@@ -18,5 +16,4 @@
                   </form>
               </div>
           </div>
-          <?php }} ?>
-        </section>
+          <?php } ?>

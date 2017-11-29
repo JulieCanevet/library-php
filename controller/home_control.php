@@ -12,8 +12,6 @@ require 'view/new_book_form.php';
 if(isset($_POST['add']) && isset($_POST['title']) && isset($_POST['author']) && isset($_POST['summary']) && isset($_POST['release_date']) && isset($_POST['category']) && !empty($_POST['title']) && !empty($_POST['author']) && !empty($_POST['summary']) && !empty($_POST['release_date']) && !empty($_POST['category'])){ // if form is completed and send
 	
 	require 'model/entities/book.php';
-
-echo 'bonjour';
   	
   	$book = new Book(array(
   		'title' => $_POST['title'], 
@@ -24,7 +22,7 @@ echo 'bonjour';
   		// 'availability' => 'oui', 
   		// 'id_custommer' => ));
  
-  $manager -> add($book);
+	$manager -> add($book);
 }
 
 // afficher les clients ou les livres
@@ -33,12 +31,42 @@ if(isset($_POST['ordre'])){
 	$users = $userManager -> getUsers();
 	require 'view/home_users_display.php';
     }
-	elseif($_POST['ordre'] == 'books'){
+	elseif($_POST['ordre'] == 'books' && !isset($_POST['type'])){
 	$books = $manager -> getBooks();
 	require 'view/home_books_display.php';    
 	}
 }
+// display listing in home page
+elseif(isset($_POST['type'])){
+    if($_POST['type'] == 'novel'){
+    	$type = $_POST['type'];
+      $bookType = $manager -> getTypeBook('novel'); 
+      	var_dump($bookType);
+      	require 'view/home_books_type_display.php';
+
+      	echo "bonjour";
+  	}
+    elseif($_POST['type'] == 'poetry'){
+      $bookType = $manager -> getTypeBook('poetry'); 
+    	require 'view/home_books_type_display.php';
+      	var_dump($bookType);
+      	echo 'non';
+    }
+    elseif($_POST['type'] == 'adventure'){
+      $bookType = $manager -> getTypeBook('adventure');
+      	var_dump($bookType);
+
+    	require 'view/home_books_type_display.php';
+    	echo 'bizarre';
+    }
+    elseif($_POST['type'] == 'scienceFiction'){
+      $bookType = $manager -> getTypeBook('scienceFiction'); 
+   	require 'view/home_books_type_display.php';
+      	var_dump($bookType);
+      	echo 'science Fiction';
+    }
+}
 else{
 	$books = $manager -> getBooks();
 	require 'view/home_books_display.php';
-    }
+}
