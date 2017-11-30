@@ -6,7 +6,6 @@ $manager = new BookManager($db);
 $userManager = new UserManager($db);
 require 'view/header.php';
 require 'view/header_home.php';
-require 'view/new_book_form.php';
 
 // je m' occupe de l'ajout
 if(isset($_POST['add']) && isset($_POST['title']) && isset($_POST['author']) && isset($_POST['summary']) && isset($_POST['release_date']) && isset($_POST['category']) && !empty($_POST['title']) && !empty($_POST['author']) && !empty($_POST['summary']) && !empty($_POST['release_date']) && !empty($_POST['category'])){ // if form is completed and send
@@ -77,7 +76,9 @@ else{ // par défaut, affiche tous les livres
 	$books = $manager -> getBooks();
 	require 'view/home_books_display.php';
 }
+require 'view/new_book_form.php';
 
+require 'view/home_down_view.php';
 
 require 'view/footer.php';
 

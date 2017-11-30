@@ -1,8 +1,12 @@
 <?php        
         if(isset($users)){
-        	foreach ($users as $key => $value) {
+        	?><h2 id="liste">Liste des utilisateurs</h2>
+        	<div id="users">
+   <?php foreach ($users as $key => $value) {
         ?>
-        <h3><?php echo $value['name'] ?></h3>
-        <h3><?php echo $value['city'] ?></h3>
-
+        <div class="user">
+        <h5><?php echo $value['name'] ?></h5>
+        <p><?php echo $value['city'] ?></p>
+</div>
         <?php }} ?>
+        </div>

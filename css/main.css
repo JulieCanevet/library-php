@@ -94,14 +94,115 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+#body, #detail{
+    background-image: url('../img/livres_phone.jpg');
+}
+header h2 {
+    padding-top: 1em;
+    margin-left: 2em;
+    color: #1a4607;
+    text-align: center;
+}
 .disponible {
-    color: green;
+    color: #2a700b;
 }
 .indisponible {
-    color: red;
+    color: #c51117;
 }
 .newBook {
     display: none;
+}
+
+.books {
+    margin: 4em auto 1em 5em;
+    text-align: left;
+    border: 1px solid #517476;
+    background-color: #51747655;
+    padding: 1em;
+    width: 60%;
+    border-radius: 7px;
+    color: black;
+    box-shadow: 0 0 15px #19380a55;
+}
+.books h3{
+   letter-spacing: 3px;
+}
+.books h6 {
+    font-family: 'Raleway', sans-serif;
+}
+.user{
+    display: flex;
+    margin-left: 6em;
+}
+.user h5{
+    margin-right: .5em;
+}
+button {
+    background-color: transparent;
+    border: 1px solid #5B2405;
+    border-radius: 5px;
+}
+#liste{
+    color: orange;
+    margin-left: 2em;
+    margin-bottom: 1em;
+    margin-top: 1.5em;
+}
+#users{
+    margin-bottom: 2em;
+}
+#down {
+    padding: 1.5em;
+    padding-left: 2em;
+    width: 100%;
+    background-color: #51747655;
+}
+
+#detail {
+    width: 100%;
+    padding: 2em;
+    height: 100vh;
+}
+#delailText{
+    background-color: #517476e5;
+    padding: 1.5em;
+}
+@media only screen and (min-width: 770px){
+    #body, #detail{
+        background-image: url(../img/livre_desktop.jpeg);
+        background-size: cover;
+    }
+    header h2 {
+        color: white;
+    }
+    #home {
+    display: flex;
+    flex-wrap: wrap;
+}
+.books {
+    margin: 4em auto 1em 5em;
+    text-align: left;
+    background-color: #FECF8Da5;
+    border-color: #5B2405;
+    width: 25%;
+    padding: 1em;
+    border-radius: 7px;
+    box-shadow: 0 0 15px #593310
+}
+#down {
+    background-color: #FECF8D65;
+}
+.newBook h1 {
+    color: white;
+}
+#delailText{
+    background-color: #FECF8Dc5;
+    padding: 1.5em;
+    box-shadow: 0 0 15px #593310
+}
 }
 /* ==========================================================================
    Helper classes

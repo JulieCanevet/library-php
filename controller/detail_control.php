@@ -16,3 +16,5 @@ if(isset($_GET['available'])){
 
 
 require 'view/detail_view.php';
+
+require 'view/footer.php';
