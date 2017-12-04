@@ -154,6 +154,9 @@ button {
 #users{
     margin-bottom: 2em;
 }
+.users {
+    height: 55vh;
+}
 #down {
     padding: 1.5em;
     padding-left: 2em;
@@ -183,11 +186,11 @@ button {
     flex-wrap: wrap;
 }
 .books {
-    margin: 4em auto 1em 5em;
+    margin: 4em auto 1em 3em;
     text-align: left;
     background-color: #FECF8Da5;
     border-color: #5B2405;
-    width: 25%;
+    width: 40%;
     padding: 1em;
     border-radius: 7px;
     box-shadow: 0 0 15px #593310

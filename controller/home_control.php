@@ -27,14 +27,13 @@ if(isset($_POST['add']) && isset($_POST['title']) && isset($_POST['author']) && 
 }
 
 // edit book availability
-if (isset($_POST['edit'])){ // if "edit" has been clicked
+//if (isset($_POST['edit'])){ // if "edit" has been clicked
   $users = $userManager -> getUsers(); // displaying users list
-}
+//}
 
 if(isset($_POST['edition'])){ // change value 
   $idBook = intval($_POST['id_book']);
   $idUser = intval($_POST['edition']);
-
   $available = $manager -> editAvailability($idBook, $idUser);
 }
 if(isset($_POST['returned'])){
