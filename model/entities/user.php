@@ -4,9 +4,8 @@ class User {
 	protected $_city;
 
 
-	public function __construct(array $donnees){ // constructeur
+	public function __construct(array $donnees){ // constructor
 		$this -> hydrate($donnees);
-     	// $this -> _type = strtolower(static::class);
    }
 
 	public function hydrate(array $donnees) { // hydratation
@@ -18,11 +17,11 @@ class User {
     	}
 	}
 
-	// LISTE DES GETTERS
+	// GETTERS
   	public function getName() { return $this-> _name;}    
   	public function getCity() { return $this-> _city;}
 
-	// LISTE DES SETTERS
+	// SETTERS
 	public function setName($name){
 			$this -> _title = $name;
 	}

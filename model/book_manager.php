@@ -40,7 +40,7 @@ class BookManager {
 		return $books;
 	}
 
-	public function editAvailability($idBook, $idUser){
+	public function editAvailability($idBook, $idUser){ // edit availability statut
 		$req = $this -> _db -> prepare('UPDATE books SET availability = :availability WHERE id_book = :id_book');
 		$req -> execute(array(
 			'availability' => $idUser,

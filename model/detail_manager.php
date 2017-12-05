@@ -12,7 +12,7 @@ class DetailsManager {
 		$this->_db = $db;
 	}
 
-	// Select le vehicule cliqué
+	// Select clicked book
 	public function getDetails($id_book){
 		$req = $this -> _db -> prepare('SELECT * FROM books
 			WHERE id_book= :id_book');
@@ -24,6 +24,7 @@ class DetailsManager {
 		return $details;
 	}
 
+	// Select users informations
 	public function getUserDetail($customer){
 		$req = $this -> _db -> prepare('SELECT * FROM customers
 			WHERE id_customer = :id_customer');

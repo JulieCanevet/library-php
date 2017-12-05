@@ -19,7 +19,3 @@ class UserManager {
 		return $users;
 	}
 }
-
-// :availability, :id_customer
-//    'summary' => $book -> getSummary(),
-//    'availability' => $book -> getAvailability()

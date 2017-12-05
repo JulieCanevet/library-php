@@ -7,7 +7,7 @@ $userManager = new UserManager($db);
 require 'view/header.php';
 require 'view/header_home.php';
 
-// je m' occupe de l'ajout
+// add new book
 if(isset($_POST['add']) && isset($_POST['title']) && isset($_POST['author']) && isset($_POST['summary']) && isset($_POST['release_date']) && isset($_POST['category']) && !empty($_POST['title']) && !empty($_POST['author']) && !empty($_POST['summary']) && !empty($_POST['release_date']) && !empty($_POST['category'])){ // if form is completed and send
     
   if(preg_match("#^[1-2][0-9]{3}$#", $_POST['release_date'])){ // check date
@@ -27,11 +27,9 @@ if(isset($_POST['add']) && isset($_POST['title']) && isset($_POST['author']) && 
 }
 
 // edit book availability
-//if (isset($_POST['edit'])){ // if "edit" has been clicked
-  $users = $userManager -> getUsers(); // displaying users list
-//}
+  $users = $userManager -> getUsers(); // get users informations
 
-if(isset($_POST['edition'])){ // change value 
+if(isset($_POST['edition'])){ // change avilability
   $idBook = intval($_POST['id_book']);
   $idUser = intval($_POST['edition']);
   $available = $manager -> editAvailability($idBook, $idUser);
@@ -41,7 +39,7 @@ if(isset($_POST['returned'])){
   $available = $manager -> editAvailability($idBook, 1);
 }
 
-// afficher les clients ou les livres
+// choice of diplay books or users
 if(isset($_POST['ordre'])){
 	if($_POST['ordre'] == 'users'){
 	$users = $userManager -> getUsers();
@@ -52,7 +50,7 @@ if(isset($_POST['ordre'])){
 	require 'view/home_books_display.php';    
 	}
 }
-// display listing in home page (suivant le type de catégorie)
+// display listing in home page by category
 elseif(isset($_POST['type'])){
     if($_POST['type'] == 'novel'){
       	$bookType = $manager -> getTypeBook('novel'); 
@@ -71,7 +69,7 @@ elseif(isset($_POST['type'])){
    		require 'view/home_books_type_display.php';
     }
 }
-else{ // par défaut, affiche tous les livres
+else{ // without informations display all books
 	$books = $manager -> getBooks();
 	require 'view/home_books_display.php';
 }

@@ -7,9 +7,8 @@ class Book {
 	protected $_release_date;
 	protected $_availability;
 
-	public function __construct(array $donnees){ // constructeur
+	public function __construct(array $donnees){ // constructor
 		$this -> hydrate($donnees);
-     	// $this -> _type = strtolower(static::class);
    }
 
 	public function hydrate(array $donnees) { // hydratation
@@ -21,7 +20,7 @@ class Book {
     	}
 	}
 
-	// LISTE DES GETTERS
+	// GETTERS
   	public function getTitle() { return $this-> _title;}    
   	public function getAuthor() { return $this-> _author;}
   	public function getRelease_date() { return $this-> _release_date;}
@@ -29,7 +28,7 @@ class Book {
   	public function getSummary() { return $this-> _summary;}
   	public function getAvailability(){ return $this-> _availability;}
 
-	// LISTE DES SETTERS
+	// SETTERS
 	public function setTitle($title){
 			$this -> _title = $title;
 	}
